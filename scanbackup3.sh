@@ -1,4 +1,5 @@
 #!/bin/bash
+###################              Author: Nambinayagan                 ################
 SECONDS=0
 echo Enter username or domain name         #Input
 read username
