@@ -1,1 +1,4 @@
 adding content in file first.txt
+Adding a new line
+Adding a second line
+
