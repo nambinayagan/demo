@@ -1,0 +1,12 @@
+#!/bin/bash
+echo Which operation needs to be performed
+echo -e "1. Addition \n2. Subtraction\n3. Multiplication \n 4.Division"
+read n
+echo Enter number1
+read num1
+echo Enter number 2
+read num2
+case $n in 
+1) ans=$( $num1 + num2 )
+echo $ans;;
+esac
