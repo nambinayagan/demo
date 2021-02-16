@@ -1,11 +1,12 @@
 Using FIND command
 Syntax: find <location> <options>.. <-exec=>
-
+ ==============To list files which are matching criteria=======================
 
 find .          	        #to list all file and directories including subdirectories in current location
 find <location>       		  #to list all files and directories inside the specified directory
 find . -type f		          #to list all files in current location
-find . -type d		          #to list all directories in current location
+find . -type d		          #to list all directories and subdirectories in current location
+find . -type d -maxdepth 1	  #to list all directories and not the subdirectories
 find . -name "nambi"	          #to list all files with exact same name
 find . -iname "nambi"	        	#to list all files with exact same name but case insensitive
 find . -iname "*nambi*"	        	#to list all files having nambi in their name eg: nambi.txt, rnambi.jpg
@@ -35,4 +36,15 @@ find . -size -5M			#list all files having size lower than 5MB
 		According to permission of files
 
 find . -perm 777			#list all files and folders having permission 777
+
+
+
+=============================To take acctions on files matching criteria===============
+
+
+find . -type d -exec chmod 755 {} \;			#to change the permission of all directoires to 755
+find . -type f -exec chmod 644 {} \;			#to change the permission of all files to 644
+find . -user nambi -exec chown nambi1: {} \;		#to change owner of a files from nambi to nambi1
+find . -empty -exec rm -f {} \;				#to delete all empty files
+
 
